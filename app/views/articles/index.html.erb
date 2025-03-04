@@ -1,0 +1,15 @@
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid d-flex justify-content-between border-bottom p-2 ">
+    <h1 class="fw-lighter">Wikinimous</h1>
+    <%= link_to 'New article', new_article_path, class: "text-decoration-none btn btn-primary" %>
+  </div>
+</nav>
+
+<div class="container">
+<h1 class="mb-3">Tasks</h1>
+
+<% @articles.each do |article| %>
+<h3><%= link_to article.title, article_path(article), class: "text-decoration-none" %></h3>
+<p><%= article.content %></p>
+<% end %>
+</div>
